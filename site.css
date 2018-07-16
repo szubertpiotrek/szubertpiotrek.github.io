@@ -654,7 +654,7 @@ body{
 .contact__img{
     flex-basis: 70%;
     width: 70%;
-    background-image: url("../4_Warsztaty/images/red_chair.png");
+    background-image: url("images/red_chair.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 250px;

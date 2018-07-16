@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4138f9dd-6682-4881-8347-41763e76d889" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site.html" beforeDir="false" afterPath="$PROJECT_DIR$/site.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="site.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="site.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="133" column="7" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+            <state relative-caret-position="1056">
+              <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="655" column="15" lean-forward="true" selection-start-line="655" selection-start-column="15" selection-end-line="655" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -34,6 +44,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/site.html" />
+        <option value="$PROJECT_DIR$/site.css" />
       </list>
     </option>
   </component>
@@ -63,6 +74,11 @@
             <path>
               <item name="szubertpiotrek.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="szubertpiotrek.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="szubertpiotrek.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="szubertpiotrek.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -99,12 +115,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531738343112</updated>
-      <workItem from="1531738344420" duration="54000" />
+      <workItem from="1531738344420" duration="803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54000" />
+    <option name="totallyTimeSpent" value="803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
@@ -138,8 +154,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/site.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="133" column="7" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+        <state relative-caret-position="1056">
+          <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="655" column="15" lean-forward="true" selection-start-line="655" selection-start-column="15" selection-end-line="655" selection-end-column="15" />
         </state>
       </provider>
     </entry>
