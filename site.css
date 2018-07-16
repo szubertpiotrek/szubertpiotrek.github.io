@@ -662,6 +662,7 @@ body{
 
 .contact__checkbox{
     float: left;
+    display: block;
 }
 
 .contact__label{
@@ -674,9 +675,98 @@ body{
     flex-basis: 15%;
     background-color: var(--main-color);
     border-radius: 10px;
-    width: 200px;
+    width: 300px;
     height:50px;
     border: none;
     font-size: 20px;
     color: white;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    padding: 40px 0;
+}
+
+.footer__copyright{
+    position: relative;
+    flex-basis: 65%;
+}
+
+.footer__copyright--p{
+    position: absolute;
+    bottom: 0;
+    color: #989898;
+}
+
+.footer__socialmedia{
+    padding-right: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 20%;
+}
+
+.footer__logo{
+    position: relative;
+    flex-basis: 15%;
+}
+
+.footer__logo--p{
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer__logo--link{
+    bottom: 0;
+    text-align: end;
+    font-size: 20px;
+    text-decoration: none;
+    color: #989898;
+}
+
+.footer__logo--span{
+    bottom: 0;
+    font-weight: 900;
+}
+
+.footer__img{
+    width: 100%;
+    height: 50px;
+}
+
+.footer__flickr{
+    background-image: url("images/flickr.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 50px;
+    display: block;
+}
+
+.footer__pinterest{
+    background-image: url("images/pinterest.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 50px;
+    display: block;
+}
+
+.footer__vimeo{
+    background-image: url("images/vimeo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 50px;
+    display: block;
+}
+
+.footer__twitter{
+    background-image: url("images/twitter.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 50px;
+    display: block;
 }
