@@ -1,0 +1,110 @@
+.contact__title{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.contact__title:after{
+  content: "";
+  background-color: $main-color;
+  height: 10px;
+  width: 100%;
+  display: block;
+
+  @media #{$medium-up}{
+    width: 380px;
+  }
+}
+
+.contact__form{
+  display: flex;
+  flex-direction: column;
+
+  @media #{$large-up}{
+    flex-direction: row;
+  }
+}
+
+.contact__input{
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__submit{
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media #{$large-up}{
+    padding-left: 30px;
+  }
+
+}
+
+.contact__name{
+  margin-top: 30px;
+  margin-bottom: 15px;
+  height: 50px;
+  font-size: 30px;
+  border: 1px solid $main-color;
+  padding-left: 10px;
+  color: #CBCBCB;
+}
+
+.contact__email{
+  margin: 15px 0;
+  height: 50px;
+  font-size: 30px;
+  border: 1px solid $main-color;
+  padding-left: 10px;
+  color: #CBCBCB;
+}
+
+.contact__textarea{
+  margin-top: 15px;
+  font-size: 30px;
+  border: 1px solid $main-color;
+  padding: 10px;
+  color: #CBCBCB;
+}
+
+.contact__img{
+  display: flex;
+  flex-basis: 100%;
+
+  @media #{$large-up}{
+    flex-basis: 70%;
+  }
+
+  img{
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.contact__checkbox{
+  float: left;
+  display: block;
+}
+
+.contact__label{
+  flex-basis: 15%;
+  color: #CBCBCB;
+  font-size: 30px;
+}
+
+.contact__submited{
+  flex-basis: 15%;
+  background-color: $main-color;
+  border-radius: 10px;
+  width: 100%;
+  height:50px;
+  border: none;
+  font-size: 20px;
+  color: white;
+
+  @media #{$large-up}{
+    width: 300px;
+  }
+}

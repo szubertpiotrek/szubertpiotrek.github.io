@@ -1,0 +1,59 @@
+.footer__copyright--p{
+  padding-top: 20px;
+  color: #989898;
+}
+
+.footer__logo--p{
+  padding-top: 20px;
+}
+
+.footer__logo--link{
+  font-size: 20px;
+  text-decoration: none;
+  color: #989898;
+}
+
+.footer__logo--span{
+  font-weight: 900;
+}
+
+.footer__img{
+  display: flex;
+  flex-direction: row;
+}
+
+.footer__flickr{
+  background-image: url("../images/flickr.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.footer__pinterest{
+  background-image: url("../images/pinterest.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.footer__vimeo{
+  background-image: url("../images/vimeo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.footer__twitter{
+  background-image: url("../images/twitter.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
