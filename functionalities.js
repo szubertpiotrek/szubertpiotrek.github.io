@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
         submenu.style.display= "none";
     });
 
+    menu[0].addEventListener("touchstart", function (event) {
+        submenu.style.display= "block";
+    });
+
+    submenu.addEventListener("touchend", function (event) {
+        submenu.style.display= "none";
+    });
+
     for(var i = 0;i<img.length;i++) {
         img[i].addEventListener("mouseover", function (event) {
             var underline = this.querySelector(".gallery__underline");
