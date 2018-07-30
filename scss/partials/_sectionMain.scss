@@ -4,13 +4,20 @@
 
 .section__main--img{
   padding-top: 30px;
+  display: none;
 
+
+  @media #{$medium-up} {
+    justify-content: center;
+  }
   @media #{$large-up}{
     padding-top: 100px;
+    display: none;
   }
 
   img{
     width: 100%;
+
   }
 }
 
@@ -78,4 +85,42 @@
   height: 100px;
   text-decoration: none;
   color: $main-color;
+}
+
+.visible{
+  display: block;
+}
+
+@keyframes btnEffectIn {
+  0%{
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes btnEffectOut {
+  0%{
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main__sidebutton--effectIn{
+  animation-name: btnEffectIn;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+.main__sidebutton--effectOut{
+  animation-name: btnEffectOut;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
 }

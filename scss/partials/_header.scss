@@ -17,6 +17,7 @@
 }
 
 .header__list{
+  padding: 10px;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -24,18 +25,11 @@
 
 .header__li{
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 
 .header__link{
-  padding: 10px;
   color: white;
   text-decoration: none;
-}
-
-.header__li:hover .header__submenu{
-  display: block;
 }
 
 .header__submenu{
@@ -43,6 +37,8 @@
   padding: 15px;
   position: absolute;
   display: none;
+  top: 60px;
+  left: calc(50% - 65px);
 }
 
 .header__submenu:before{

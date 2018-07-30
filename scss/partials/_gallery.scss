@@ -1,8 +1,4 @@
-.gallery__img1{
-  position: relative;
-}
-
-.gallery__img2{
+.gallery__img{
   position: relative;
 }
 
@@ -16,11 +12,7 @@
   color: #BCBCBC;
 }
 
-.img1{
-  width: 100%;
-}
-
-.img2{
+.img{
   width: 100%;
 }
 
@@ -62,4 +54,44 @@
   @media #{$medium-up}{
     width: 180px;
   }
+}
+
+@keyframes myAnimationIn{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes myAnimationOut{
+  0%{
+    display: block;
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.disappearing {
+  animation-name: myAnimationIn;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.appearing{
+  animation-name: myAnimationOut;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
