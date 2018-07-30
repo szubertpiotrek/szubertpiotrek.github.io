@@ -5,14 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var menu = document.querySelectorAll(".header__li");
 
     var img = document.querySelectorAll(".gallery__img");
-
-    menu[0].addEventListener("mouseover", function (event) {
-        submenu.style.display= "block";
-    });
-
-    submenu.addEventListener("mouseout", function (event) {
-        submenu.style.display= "none";
-    });
+    
 
     menu[0].addEventListener("touchstart", function (event) {
         submenu.style.display= "block";
