@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var menu = document.querySelectorAll(".header__li");
 
+    var btn = menu[0].firstElementChild;
+
     var img = document.querySelectorAll(".gallery__img");
 
     var mobileMedium = window.matchMedia("screen and (max-width: 1023px) and (min-width: 641px)");
@@ -27,12 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     menu[0].addEventListener("touchstart", function (event) {
-        submenu.classList.add("show");
+        event.preventDefault();
+        submenu.classList.toggle("show");
     });
 
-    submenu.addEventListener("touchend", function (event) {
-        submenu.classList.remove("show");
+    menu[0].addEventListener("click", function (event) {
+        event.preventDefault();
+        submenu.classList.toggle("show");
     });
+    
 
     for (var i = 0; i < img.length; i++) {
         img[i].addEventListener("mouseover", function (event) {
