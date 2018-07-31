@@ -33,12 +33,13 @@
 }
 
 .header__submenu{
+  margin-top: 40px;
   background-color: black;
   padding: 15px;
   position: absolute;
   display: none;
-  top: 60px;
   left: calc(50% - 65px);
+  z-index: 100;
 }
 
 .header__submenu:before{

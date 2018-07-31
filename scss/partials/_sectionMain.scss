@@ -111,7 +111,7 @@
 
 .main__sidebutton--effectIn{
   animation-name: btnEffectIn;
-  animation-duration: 300ms;
+  animation-duration: 200ms;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
@@ -119,8 +119,12 @@
 
 .main__sidebutton--effectOut{
   animation-name: btnEffectOut;
-  animation-duration: 300ms;
+  animation-duration: 200ms;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
+}
+
+.show{
+  display: block;
 }
