@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     menu[0].addEventListener("touchstart", function (event) {
-        submenu.style.display = "block";
+        submenu.classList.add("show");
     });
 
     submenu.addEventListener("touchend", function (event) {
-        submenu.style.display = "none";
+        submenu.classList.remove("show");
     });
 
     for (var i = 0; i < img.length; i++) {
