@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4138f9dd-6682-4881-8347-41763e76d889" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functionalities.js" beforeDir="false" afterPath="$PROJECT_DIR$/functionalities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/partials/_sectionMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/partials/_sectionMain.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site.html" beforeDir="false" afterPath="$PROJECT_DIR$/site.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +19,8 @@
       <file leaf-file-name="_sectionMain.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scss/partials/_sectionMain.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
+            <state relative-caret-position="381">
+              <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -31,8 +28,8 @@
       <file leaf-file-name="functionalities.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functionalities.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="530">
+              <caret line="162" column="49" selection-start-line="162" selection-start-column="49" selection-end-line="162" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -126,8 +123,8 @@
         <option value="$PROJECT_DIR$/scss/partials/_gallery.scss" />
         <option value="$PROJECT_DIR$/scss/partials/_contact.scss" />
         <option value="$PROJECT_DIR$/scss/partials/_header.scss" />
-        <option value="$PROJECT_DIR$/scss/partials/_sectionMain.scss" />
         <option value="$PROJECT_DIR$/site.html" />
+        <option value="$PROJECT_DIR$/scss/partials/_sectionMain.scss" />
         <option value="$PROJECT_DIR$/functionalities.js" />
       </list>
     </option>
@@ -234,12 +231,12 @@
       <workItem from="1532776577581" duration="1480000" />
       <workItem from="1532799635644" duration="5417000" />
       <workItem from="1532868528185" duration="51338000" />
-      <workItem from="1533029553734" duration="17262000" />
+      <workItem from="1533029553734" duration="17945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85953000" />
+    <option name="totallyTimeSpent" value="86636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
@@ -571,13 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scss/partials/_sectionMain.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -585,10 +575,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scss/partials/_sectionMain.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functionalities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="530">
+          <caret line="162" column="49" selection-start-line="162" selection-start-column="49" selection-end-line="162" selection-end-column="49" />
         </state>
       </provider>
     </entry>

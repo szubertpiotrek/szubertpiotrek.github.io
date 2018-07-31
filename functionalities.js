@@ -97,6 +97,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    buttons[0].addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        images[elementNumber].classList.remove("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images[elementNumber].classList.add("visible");
+    });
+
+    buttons[1].addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        images[elementNumber].classList.remove("visible");
+        elementNumber++;
+
+        if (elementNumber >= images.length) {
+            elementNumber = 0;
+        }
+
+        images[elementNumber].classList.add("visible");
+
+    });
+
+
 
     insideButtons[0].addEventListener("click", function (event) {
         event.preventDefault();
@@ -111,6 +137,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     insideButtons[1].addEventListener("click", function (event) {
+        event.preventDefault();
+        images[elementNumber].classList.remove("visible");
+        elementNumber++;
+
+        if (elementNumber >= images.length) {
+            elementNumber = 0;
+        }
+
+        images[elementNumber].classList.add("visible");
+    });
+
+    insideButtons[0].addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        images[elementNumber].classList.remove("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images[elementNumber].classList.add("visible");
+    });
+
+    insideButtons[1].addEventListener("touchstart", function (event) {
         event.preventDefault();
         images[elementNumber].classList.remove("visible");
         elementNumber++;
