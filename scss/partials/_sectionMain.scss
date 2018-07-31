@@ -3,9 +3,8 @@
 }
 
 .section__main--img{
-  padding-top: 30px;
   display: none;
-
+  width: 100%;
 
   @media #{$medium-up} {
     justify-content: center;
@@ -50,6 +49,7 @@
 }
 
 .main__button{
+  margin: 20px 0;
   background-color: $main-color;
   border-radius: 10px;
   width: 100%;
@@ -69,9 +69,12 @@
 
 .main__sidebutton{
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
+}
+
+.main__insidebutton{
+  height: 100%;
+  display: none;
 }
 
 .main__sidebutton--item{
@@ -127,4 +130,21 @@
 
 .show{
   display: block;
+}
+
+.show1{
+  display: inline-block;
+}
+
+.showButtons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main__inside{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
