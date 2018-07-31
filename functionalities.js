@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    var submenu = document.querySelector(".header__submenu");
+    var submenu = document.querySelector(".header__submenu--link");
 
-    var menu = document.querySelectorAll(".header__li");
+    var menu = document.querySelectorAll(".header__link");
 
     var btn = menu[0].firstElementChild;
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         submenu.classList.toggle("show");
     });
-    
+
 
     for (var i = 0; i < img.length; i++) {
         img[i].addEventListener("mouseover", function (event) {
