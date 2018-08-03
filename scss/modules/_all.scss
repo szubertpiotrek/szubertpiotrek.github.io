@@ -1,3 +1,7 @@
 $large-up: "screen and (min-width: 1024px)";
 $medium-up: "screen and (min-width: 640px)";
 $main-color: #27C7AB;
+
+.button__effect{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 20px 0 rgba(0,0,0,0.19);
+}

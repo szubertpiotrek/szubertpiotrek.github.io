@@ -20,7 +20,7 @@
   }
 }
 
-.costs__basic{
+.costs__box{
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
   }
 }
 
-.costs__basic--title{
+.costs__box--title{
   color: $main-color;
   font-weight: 500;
   padding-top: 20px;
@@ -61,7 +61,7 @@
   z-index: 2;
 }
 
-.costs__basic--prize{
+.costs__box--prize{
   margin: 25px;
   padding: 17px;
   padding-right: 23px;
@@ -87,7 +87,7 @@
   font-size: 15px;
 }
 
-.costs__basic--item1{
+.costs__box--item1{
   width: 100%;
   background-color: #E4E4E4;
   text-align: center;
@@ -96,7 +96,7 @@
   color: #919191;
 }
 
-.costs__basic--item2{
+.costs__box--item2{
   font-size: 20px;
   padding: 8px;
   text-align: center;
@@ -114,46 +114,12 @@
   height:30px;
   border: none;
   font-size: 20px;
+  transition-duration: 0.4s;
 }
 
-.basic__button--a{
+.box__button--a{
   text-decoration: none;
   color: white;
-}
-
-.costs__standard{
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #C2C2C2;
-  position: relative;
-  background-color: #F9F9F9;
-
-  @media #{$large-up}{
-    margin-top: 0;
-  }
-}
-
-.costs__standard--title{
-  color: $main-color;
-  font-weight: 500;
-  padding-top: 20px;
-}
-
-.costs__standard--prize{
-  margin: 25px;
-  padding: 17px;
-  padding-right: 23px;
-  border-radius: 50%;
-  background-color: white;
-  border: 1px solid #C2C2C2;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  color: #C2C2C2;
-  font-size: 40px;
-  position: relative;
 }
 
 .costs__prize--span1-2{
@@ -167,33 +133,6 @@
   font-size: 15px;
 }
 
-.costs__standard--item1{
-  width: 100%;
-  background-color: #E4E4E4;
-  text-align: center;
-  padding: 8px;
-  font-size: 20px;
-  color: #919191;
-}
-
-.costs__standard--item2{
-  font-size: 20px;
-  padding: 8px;
-  text-align: center;
-  width: 100%;
-  background-color: #F1F1F1;
-  color: #7A7A7A;
-}
-
-.costs__standard--item3{
-  width: 100%;
-  background-color: #E4E4E4;
-  text-align: center;
-  padding: 8px;
-  font-size: 20px;
-  color: #919191;
-}
-
 .costs__standard--button{
   margin-top: 44px;
   margin-bottom: 15px;
@@ -203,46 +142,7 @@
   height:30px;
   border: none;
   font-size: 20px;
-}
-
-.standard__button--a{
-  text-decoration: none;
-  color: white;
-}
-
-.costs__advance{
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #C2C2C2;
-  position: relative;
-  background-color: #F9F9F9;
-
-  @media #{$large-up}{
-    margin-top: 0;
-  }
-}
-
-.costs__advance--title{
-  color: $main-color;
-  font-weight: 500;
-  padding-top: 20px;
-}
-
-.costs__advance--prize{
-  margin: 25px;
-  padding: 17px;
-  padding-right: 23px;
-  border-radius: 50%;
-  background-color: white;
-  border: 1px solid #C2C2C2;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  color: #C2C2C2;
-  font-size: 40px;
-  position: relative;
+  transition-duration: 0.4s;
 }
 
 .costs__prize--span1-3{
@@ -257,42 +157,6 @@
   font-size: 15px;
 }
 
-.costs__advance--item1{
-  width: 100%;
-  background-color: #E4E4E4;
-  text-align: center;
-  padding: 8px;
-  font-size: 20px;
-  color: #919191;
-}
-
-.costs__advance--item2{
-  font-size: 20px;
-  padding: 8px;
-  text-align: center;
-  width: 100%;
-  background-color: #F1F1F1;
-  color: #7A7A7A;
-}
-
-.costs__advance--item3{
-  width: 100%;
-  background-color: #E4E4E4;
-  text-align: center;
-  padding: 8px;
-  font-size: 20px;
-  color: #919191;
-}
-
-.costs__advance--item4{
-  font-size: 20px;
-  padding: 8px;
-  text-align: center;
-  width: 100%;
-  background-color: #F1F1F1;
-  color: #7A7A7A;
-}
-
 .costs__advance--button{
   margin-top: 8px;
   margin-bottom: 15px;
@@ -302,46 +166,8 @@
   height:30px;
   border: none;
   font-size: 20px;
+  transition-duration: 0.4s;
 }
 
-.advance__button--a{
-  text-decoration: none;
-  color: white;
-}
 
-.costs__basic:hover, .costs__standard:hover, .costs__advance:hover{
-  background-color: $main-color;
-  border: 1px solid $main-color;
-}
 
-.costs__basic:hover .costs__basic--title, .costs__standard:hover .costs__standard--title, .costs__advance:hover .costs__advance--title{
-  color: white;
-}
-
-.costs__basic:hover .costs__basic--prize, .costs__standard:hover .costs__standard--prize, .costs__advance:hover .costs__advance--prize{
-  color: $main-color;
-}
-
-.costs__basic:hover .costs__prize--span1-1, .costs__standard:hover .costs__prize--span1-2, .costs__advance:hover .costs__prize--span1-3{
-  color: $main-color;
-}
-
-.costs__basic:hover .costs__prize--span2, .costs__standard:hover .costs__prize--span2, .costs__advance:hover .costs__prize--span2{
-  color: $main-color;
-}
-
-.costs__basic:hover .costs__basic--button, .costs__standard:hover .costs__standard--button, .costs__advance:hover .costs__advance--button{
-  background-color: white;
-}
-
-.costs__basic:hover .basic__button--a, .costs__standard:hover .standard__button--a, .costs__advance:hover .advance__button--a{
-  color: $main-color;
-}
-
-.costs__basic:hover .costs__before, .costs__standard:hover .costs__before, .costs__advance:hover .costs__before{
-  border: 1px solid $main-color;
-}
-
-.costs__basic:hover .costs__before--circle, .costs__standard:hover .costs__before--circle, .costs__advance:hover .costs__before--circle{
-  background-color: $main-color;
-}
