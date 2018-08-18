@@ -111,3 +111,21 @@
   }
 }
 
+.pulse4{
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(67,177,223, 0.4);
+  animation: pulse2 2s alternate;
+}
+
+@keyframes pulse4 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(67,177,223, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(204,169,44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+

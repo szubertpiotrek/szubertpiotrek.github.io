@@ -92,10 +92,6 @@
   color: $main-color;
 }
 
-.visible{
-  display: block;
-}
-
 @keyframes btnEffectIn {
   0%{
     transform: scale(1);
@@ -128,6 +124,14 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
+}
+
+.visible{
+  display: block;
+}
+
+.invisible{
+  display: none;
 }
 
 .show{

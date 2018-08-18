@@ -3,7 +3,10 @@
   margin: 0 auto;
 
   .row {
-    margin: 20px 0;
+    margin: 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     @media #{$medium-up} and (max-width: 1023px){
       display: flex;
@@ -17,8 +20,9 @@
       flex-wrap: wrap;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 1 through 3 {
       .col-sm-#{$i} {
+        width: (100% / 3) * $i;
         padding: 0 20px;
         min-height: 1px;
         margin: 20px 0;
@@ -78,6 +82,7 @@
     @media #{$medium-up} {
       @for $i from 1 through 12 {
         .col-inv-md-#{$i} {
+          width: (100% / 12) * $i;
           padding: 0 20px;
           min-height: 1px;
           margin: 20px 0;

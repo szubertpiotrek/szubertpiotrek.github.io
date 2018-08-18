@@ -1,24 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(function () {
 
-    var submenu = document.querySelector(".header__submenu");
 
-    var menu = document.querySelectorAll(".header__li");
+    const submenu = $(".header__submenu");
 
-    var img = document.querySelectorAll(".gallery__img");
+    const menu = $(".header__li");
 
-    var mobileMedium = window.matchMedia("screen and (max-width: 1023px) and (min-width: 641px)");
+    const headerMenu = $(".header__nav");
 
-    var mobileLarge = window.matchMedia("screen and (min-width: 1024px)");
+    const headerList = $(".header__list");
 
-    var mobileSmall = window.matchMedia("screen and (max-width: 640px)");
+    const menuLink = $('.header__link');
 
-    var changeBtn = document.querySelectorAll(".section__post .container .row>div");
+    const menuBtn = $(".menu__btn--effect");
 
-    var row = document.querySelector(".section__post .container .row");
+    const img = $(".gallery__img");
 
-    var costsBoxes = document.querySelectorAll(".costs__box");
+    const header = $("header");
 
-    var mainColor = "#27C7AB";
+    const mobileMedium = window.matchMedia("screen and (max-width: 1023px) and (min-width: 641px)");
+
+    const mobileLarge = window.matchMedia("screen and (min-width: 1024px)");
+
+    const mobileSmall = window.matchMedia("screen and (max-width: 640px)");
+
+    const changeBtn = $(".section__post .container .row>div");
+
+    const row = $(".section__post .container .row");
+
+    const costsBoxes = $(".costs__box");
+
+    const mainColor = "#27C7AB";
     
     var mainButton = document.querySelector(".main__button");
 
@@ -26,263 +37,348 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var submitButton = document.querySelector(".contact__submited");
 
-    var footerImg = document.querySelectorAll(".footer__img--item");
+    const footerImg = $(".footer__img--item");
 
+    const arrow = $('.header__link--arrow');
 
-    menu[0].addEventListener("mouseover", function (event) {
-        submenu.classList.add("show");
-    });
-
-    submenu.addEventListener("mouseout", function (event) {
-        submenu.classList.remove("show");
-    });
-
-    menu[0].addEventListener("touchstart", function (event) {
+    menuBtn.on("click", function (event) {
         event.preventDefault();
-        submenu.classList.toggle("show");
+        headerMenu.removeClass("header__nav");
+        headerList.removeClass("header__list");
+        headerMenu.toggleClass("sidenav");
+
+
+        headerMenu.toggleClass("invisible");
+        menu.toggleClass("sidenavLi");
+        menu.removeClass("header__li");
+
+        $(".header").toggleClass("newMargin");
+        $("section").toggleClass("shadow");
+        $("footer").toggleClass("shadow");
+
+        $("body").toggleClass("pageScroll");
+
     });
 
-    menu[0].addEventListener("click", function (event) {
+    menuLink.hover(
+        ()=>
+        {
+            $(event.currentTarget).addClass('header__link--hover');
+            $(event.currentTarget).find('.header__link--arrow').css("border-top", "12px solid rgb(38, 191, 163)").css("transition", "0.5s");
+        },
+        ()=>
+        {
+            $(event.currentTarget).removeClass('header__link--hover');
+            $(event.currentTarget).find('.header__link--arrow').css("border-top", "12px solid #fff").css("transition", "0.5s");
+        }
+    );
+
+    $(window).on("click", function (event) {
+        if (!menuBtn.is(event.target)&& menuBtn.has(event.target).length === 0 && !headerMenu.is(event.target)&& headerMenu.has(event.target).length === 0){
+            event.preventDefault();
+            headerMenu.removeClass("sidenav");
+
+
+            headerMenu.addClass("invisible");
+            menu.removeClass("sidenavLi");
+            menu.addClass("header__li");
+
+            $(".header").removeClass("newMargin");
+            $("section").removeClass("shadow");
+            $("footer").removeClass("shadow");
+
+            $("body").removeClass("pageScroll");
+
+        }
+    });
+
+    menu.on("click", () => {
+        submenu.slideToggle();
+        arrow.toggleClass('rotation');
+    });
+
+    menu.on("touchstart", (event) => {
         event.preventDefault();
-        submenu.classList.toggle("show");
+        submenu.toggleClass("show");
+    });
+
+    menu.on("click", (event) => {
+        event.preventDefault();
+        submenu.toggleClass("show");
     });
 
 
-    for (var i = 0; i < img.length; i++) {
-        img[i].addEventListener("mouseover", function (event) {
-            var underline = this.querySelector(".gallery__underline");
-            underline.classList.remove("appearing");
-            underline.classList.add("disappearing");
-        });
-        img[i].addEventListener("mouseout", function (event) {
-            var underline = this.querySelector(".gallery__underline");
-            underline.classList.remove("disappearing");
-            underline.classList.add("appearing");
-        })
-    }
-
-    for (var i = 0; i < img.length; i++) {
-        img[i].addEventListener("touchstart", function (event) {
-            var underline = this.querySelector(".gallery__underline");
-            underline.classList.remove("appearing");
-            underline.classList.add("disappearing");
-        });
-        img[i].addEventListener("touchend", function (event) {
-            var underline = this.querySelector(".gallery__underline");
-            underline.classList.remove("disappearing");
-            underline.classList.add("appearing");
-        })
-    }
-
-    var buttons = document.querySelectorAll(".main__sidebutton");
-
-    var insideButtons = document.querySelectorAll(".main__insidebutton");
-
-    var images = document.querySelectorAll(".section__main--img");
-
-    var elementNumber = 0;
+    img.hover(event => {
+            const underline = $(event.currentTarget).find('.gallery__underline');
+            underline.removeClass("appearing");
+            underline.addClass("disappearing");
+          },
+          event => {
+          const underline = $(event.currentTarget).find('.gallery__underline');
+          underline.removeClass("disappearing");
+          underline.addClass("appearing");
+    });
 
 
-    images[elementNumber].classList.add("visible");
+    img.on("touchstart", function (event) {
+        const underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("appearing");
+        underline.addClass("disappearing");
+    });
+    img.on("touchend", function (event) {
+        const underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("disappearing");
+        underline.addClass("appearing");
+    });
 
-    for(var i =0;i<buttons.length;i++){
-        buttons[i].addEventListener("click", function (event) {
+
+    const buttons = $(".main__sidebutton");
+
+    const insideButtons = $(".main__insidebutton");
+
+    const images = $(".section__main--img");
+
+    let elementNumber = 0;
+
+
+    images.eq(elementNumber).addClass("visible");
+
+
+    buttons.on("click", function (event) {
+        event.preventDefault();
+        images.eq(elementNumber).removeClass("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images.eq(elementNumber).addClass("visible");
+    });
+
+
+    buttons.on("touchstart", function (event) {
+        event.preventDefault();
+        images.eq(elementNumber).removeClass("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images.eq(elementNumber).addClass("visible");
+    });
+
+
+
+    insideButtons.on("click", function (event) {
+        event.preventDefault();
+        images.eq(elementNumber).removeClass("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images.eq(elementNumber).addClass("visible");
+    });
+
+    insideButtons.on("touchstart", function (event) {
+        event.preventDefault();
+        images.eq(elementNumber).removeClass("visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images.eq(elementNumber).addClass("visible");
+    });
+
+    buttons.hover(
+        function (event) {
             event.preventDefault();
-            images[elementNumber].classList.remove("visible");
-            elementNumber--;
-
-            if (elementNumber === -1) {
-                elementNumber = images.length - 1;
-            }
-
-            images[elementNumber].classList.add("visible");
-        });
-
-        buttons[i].addEventListener("touchstart", function (event) {
+            $(event.currentTarget).children().first().removeClass("main__sidebutton--effectOut");
+            $(event.currentTarget).children().first().addClass("main__sidebutton--effectIn");
+        },
+        function (event) {
             event.preventDefault();
-            images[elementNumber].classList.remove("visible");
-            elementNumber--;
-
-            if (elementNumber === -1) {
-                elementNumber = images.length - 1;
-            }
-
-            images[elementNumber].classList.add("visible");
+            $(event.currentTarget).children().first().removeClass("main__sidebutton--effectIn");
+            $(event.currentTarget).children().first().addClass("main__sidebutton--effectOut");
         });
 
-        insideButtons[i].addEventListener("click", function (event) {
+    insideButtons.hover(
+        function (event) {
             event.preventDefault();
-            images[elementNumber].classList.remove("visible");
-            elementNumber--;
-
-            if (elementNumber === -1) {
-                elementNumber = images.length - 1;
-            }
-
-            images[elementNumber].classList.add("visible");
-        });
-
-        insideButtons[i].addEventListener("touchstart", function (event) {
+            $(event.currentTarget).children().first().removeClass("main__sidebutton--effectOut");
+            $(event.currentTarget).children().first().addClass("main__sidebutton--effectIn");
+        },
+        function (event) {
             event.preventDefault();
-            images[elementNumber].classList.remove("visible");
-            elementNumber--;
-
-            if (elementNumber === -1) {
-                elementNumber = images.length - 1;
-            }
-
-            images[elementNumber].classList.add("visible");
+            $(event.currentTarget).children().first().removeClass("main__sidebutton--effectIn");
+            $(event.currentTarget).children().first().addClass("main__sidebutton--effectOut");
         });
 
-        buttons[i].addEventListener("mouseover", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectOut");
-            this.firstElementChild.classList.add("main__sidebutton--effectIn");
-        });
 
-        buttons[i].addEventListener("mouseout", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectIn");
-            this.firstElementChild.classList.add("main__sidebutton--effectOut");
-        });
+    buttons.on("touchstart", function (event) {
+        event.preventDefault();
+        $(event.currentTarget).children().first().removeClass("main__sidebutton--effectOut");
+        $(event.currentTarget).children().first().addClass("main__sidebutton--effectIn");
+    });
 
-        insideButtons[i].addEventListener("mouseover", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectOut");
-            this.firstElementChild.classList.add("main__sidebutton--effectIn");
-        });
+    buttons.on("touchend", function (event) {
+        event.preventDefault();
+        $(event.currentTarget).children().first().removeClass("main__sidebutton--effectIn");
+        $(event.currentTarget).children().first().addClass("main__sidebutton--effectOut");
+    });
 
-        insideButtons[i].addEventListener("mouseout", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectIn");
-            this.firstElementChild.classList.add("main__sidebutton--effectOut");
-        });
+    insideButtons.on("touchstart", function (event) {
+        event.preventDefault();
+        $(event.currentTarget).children().first().removeClass("main__sidebutton--effectOut");
+        $(event.currentTarget).children().first().addClass("main__sidebutton--effectIn");
+    });
 
-        buttons[i].addEventListener("touchstart", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectOut");
-            this.firstElementChild.classList.add("main__sidebutton--effectIn");
-        });
+    insideButtons.on("touchend", function (event) {
+        event.preventDefault();
+        $(event.currentTarget).children().first().removeClass("main__sidebutton--effectIn");
+        $(event.currentTarget).children().first().addClass("main__sidebutton--effectOut");
+    });
 
-        buttons[i].addEventListener("touchend", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectIn");
-            this.firstElementChild.classList.add("main__sidebutton--effectOut");
-        });
-
-        insideButtons[i].addEventListener("touchstart", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectOut");
-            this.firstElementChild.classList.add("main__sidebutton--effectIn");
-        });
-
-        insideButtons[i].addEventListener("touchend", function (event) {
-            event.preventDefault();
-            this.firstElementChild.classList.remove("main__sidebutton--effectIn");
-            this.firstElementChild.classList.add("main__sidebutton--effectOut");
-        });
-    }
 
     mobileMedium.addListener(function (mobile) {
         if (mobile.matches) {
-            changeBtn[0].firstElementChild.classList.remove("showButtons");
-            changeBtn[3].firstElementChild.classList.remove("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.add("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.add("show1");
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+
+            console.log(row.find(".main__sidebutton--a"));
+
+            headerMenu.addClass("invisible");
+            headerMenu.removeClass("sidenav");
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+            menu.removeClass("sidenavLi");
+
+            turnOff();
         }
     });
 
     mobileLarge.addListener(function (mobile) {
         if (mobile.matches) {
-            changeBtn[0].firstElementChild.classList.add("showButtons");
-            changeBtn[3].firstElementChild.classList.add("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.remove("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.remove("show1");
+            changeBtn.eq(0).children().first().addClass("showButtons");
+            changeBtn.eq(3).children().first().addClass("showButtons");
+            row.find(".main__insidebutton").removeClass("show1");
+
+            headerMenu.removeClass("invisible");
+            headerMenu.removeClass("sidenav");
+
+            menu.removeClass("sidenavLi");
+            menu.addClass("header__li");
+
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+
+            headerMenu.addClass("header__nav");
+            headerList.addClass("header__list");
+
+            menu.removeClass("sidenavLi");
+
+            turnOn();
         }
     });
 
     mobileSmall.addListener(function (mobile) {
         if (mobile.matches) {
-            changeBtn[0].firstElementChild.classList.remove("showButtons");
-            changeBtn[3].firstElementChild.classList.remove("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.add("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.add("show1");
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+
+            headerMenu.addClass("invisible");
+            headerMenu.removeClass("sidenav");
+
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+            menu.removeClass("sidenavLi");
+
+            turnOff();
         }
     });
 
 
-    window.onload = function (event) {
+    $(window).ready(function (event) {
         console.log(window.innerWidth);
         if (window.innerWidth <= 1024 && window.innerWidth > 640) {
-            changeBtn[0].firstElementChild.classList.remove("showButtons");
-            changeBtn[3].firstElementChild.classList.remove("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.add("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.add("show1");
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+            headerMenu.addClass("invisible");
+            turnOff();
         }
         else if (window.innerWidth <= 640) {
-            changeBtn[0].firstElementChild.classList.remove("showButtons");
-            changeBtn[3].firstElementChild.classList.remove("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.add("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.add("show1");
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+            headerMenu.addClass("invisible");
+
+            turnOff();
         } else {
-            changeBtn[0].firstElementChild.classList.add("showButtons");
-            changeBtn[3].firstElementChild.classList.add("showButtons");
-            row.children[1].firstElementChild.firstElementChild.classList.remove("show1");
-            row.children[1].firstElementChild.lastElementChild.classList.remove("show1");
+            changeBtn.eq(0).children().first().addClass("showButtons");
+            changeBtn.eq(3).children().first().addClass("showButtons");
+            row.find(".main__insidebutton").removeClass("show1");
+            headerMenu.removeClass("invisible");
+
+            turnOn();
         }
-    };
+    });
 
-    for(var i=0;i<costsBoxes.length;i++){
-        costsBoxes[i].addEventListener("mouseover", function (event) {
-            this.style.backgroundColor = mainColor;
-            this.style.border = "1px solid" + mainColor;
-            this.children[0].style.border = "1px solid" + mainColor;
-            this.children[1].style.backgroundColor = mainColor;
-            this.children[2].style.color = "white";
-            this.children[3].style.color = mainColor;
-            this.lastElementChild.style.backgroundColor = "white";
-            this.lastElementChild.children[0].style.color = mainColor;
-        })
-    }
+    costsBoxes.hover(
+        function (event) {
+            $(event.currentTarget).css('backgroundColor', mainColor);
+            $(event.currentTarget).css('border', "1px solid" + mainColor);
+            $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
+            $(event.currentTarget).children().eq(1).css('backgroundColor' , mainColor);
+            $(event.currentTarget).children().eq(2).css('color', "white");
+            $(event.currentTarget).children().eq(3).css("color" , mainColor);
+            $(event.currentTarget).children().last().css("backgroundColor","white");
+            $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
+        },
+        function (event) {
+            $(event.currentTarget).css("backgroundColor", "#F9F9F9");
+            $(event.currentTarget).css("border", "1px solid #C2C2C2");
+            $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
+            $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
+            $(event.currentTarget).children().eq(2).css("color", mainColor);
+            $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
+            $(event.currentTarget).children().last().css("backgroundColor", mainColor);
+            $(event.currentTarget).children().last().children().eq(0).css("color", "white");
+        });
 
-    for(var i=0;i<costsBoxes.length;i++){
-        costsBoxes[i].addEventListener("mouseout", function (event) {
-            this.style.backgroundColor = "#F9F9F9";
-            this.style.border = "1px solid #C2C2C2";
-            this.children[0].style.border = "1px solid #C2C2C2";
-            this.children[1].style.backgroundColor = "#C2C2C2";
-            this.children[2].style.color = mainColor;
-            this.children[3].style.color = "#C2C2C2";
-            this.lastElementChild.style.backgroundColor = mainColor;
-            this.lastElementChild.children[0].style.color = "white";
-        })
-    }
+    costsBoxes.on("touchstart", function (event) {
+        $(event.currentTarget).css('backgroundColor', mainColor);
+        $(event.currentTarget).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(1).css('backgroundColor' , mainColor);
+        $(event.currentTarget).children().eq(2).css('color', "white");
+        $(event.currentTarget).children().eq(3).css("color" , mainColor);
+        $(event.currentTarget).children().last().css("backgroundColor","white");
+        $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
+    });
 
-    for(var i=0;i<costsBoxes.length;i++){
-        costsBoxes[i].addEventListener("touchstart", function (event) {
-            this.style.backgroundColor = mainColor;
-            this.style.border = "1px solid" + mainColor;
-            this.children[0].style.border = "1px solid" + mainColor;
-            this.children[1].style.backgroundColor = mainColor;
-            this.children[2].style.color = "white";
-            this.children[3].style.color = mainColor;
-            this.lastElementChild.style.backgroundColor = "white";
-            this.lastElementChild.children[0].style.color = mainColor;
-        })
-    }
 
-    for(var i=0;i<costsBoxes.length;i++){
-        costsBoxes[i].addEventListener("touchend", function (event) {
-            this.style.backgroundColor = "#F9F9F9";
-            this.style.border = "1px solid #C2C2C2";
-            this.children[0].style.border = "1px solid #C2C2C2";
-            this.children[1].style.backgroundColor = "#C2C2C2";
-            this.children[2].style.color = mainColor;
-            this.children[3].style.color = "#C2C2C2";
-            this.lastElementChild.style.backgroundColor = mainColor;
-            this.lastElementChild.children[0].style.color = "white";
-        })
-    }
+    costsBoxes.on("touchend", function (event) {
+        $(event.currentTarget).css("backgroundColor", "#F9F9F9");
+        $(event.currentTarget).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
+        $(event.currentTarget).children().eq(2).css("color", mainColor);
+        $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
+        $(event.currentTarget).children().last().css("backgroundColor", mainColor);
+        $(event.currentTarget).children().last().children().eq(0).css("color", "white");
+    });
+
     
     mainButton.addEventListener("mouseover", function (event) {
         this.classList.add("button__effect");
@@ -348,84 +444,40 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(mainButton);
     });
 
-    footerImg[0].addEventListener("mouseover", function (event) {
-        this.classList.add("pulse1");
-        console.log(mainButton);
-    });
+    for(let i=0; i<footerImg.length; i++){
 
-    footerImg[0].addEventListener("mouseout", function (event) {
-        this.classList.remove("pulse1");
-        console.log(mainButton);
-    });
+        footerImg.eq(i).hover(
+            function (event) {
+                $(event.currentTarget).addClass(`pulse${i+1}`);
+            },
+            function (event) {
+                $(event.currentTarget).removeClass(`pulse${i+1}`);
+            });
 
-    footerImg[0].addEventListener("touchstart", function (event) {
-        this.classList.add("pulse1");
-        console.log(mainButton);
-    });
+        footerImg.eq(i).on("touchstart", function (event) {
+            $(event.currentTarget).addClass(`pulse${i+1}`);
+        });
 
-    footerImg[0].addEventListener("touchend", function (event) {
-        this.classList.remove("pulse1");
-        console.log(mainButton);
-    });
+        footerImg.eq(i).on("touchend", function (event) {
+            $(event.currentTarget).removeClass(`pulse${i+1}`);
+        });
+    }
 
-    footerImg[1].addEventListener("mouseover", function (event) {
-        this.classList.add("pulse2");
-        console.log(mainButton);
-    });
+    function turnOn(){
+        $(window).on('scroll', function () {
+            if($(this).scrollTop() >200){
+                header.slideUp(700);
+            }else{
+                header.slideDown(700);
+            }
+        })
+    }
 
-    footerImg[1].addEventListener("mouseout", function (event) {
-        this.classList.remove("pulse2");
-        console.log(mainButton);
-    });
 
-    footerImg[1].addEventListener("touchstart", function (event) {
-        this.classList.add("pulse2");
-        console.log(mainButton);
-    });
+    function turnOff(){
+        $(window).off('scroll');
+    }
 
-    footerImg[1].addEventListener("touchend", function (event) {
-        this.classList.remove("pulse2");
-        console.log(mainButton);
-    });
 
-    footerImg[2].addEventListener("mouseover", function (event) {
-        this.classList.add("pulse3");
-        console.log(mainButton);
-    });
-
-    footerImg[2].addEventListener("mouseout", function (event) {
-        this.classList.remove("pulse3");
-        console.log(mainButton);
-    });
-
-    footerImg[2].addEventListener("touchstart", function (event) {
-        this.classList.add("pulse3");
-        console.log(mainButton);
-    });
-
-    footerImg[2].addEventListener("touchend", function (event) {
-        this.classList.remove("pulse3");
-        console.log(mainButton);
-    });
-
-    footerImg[3].addEventListener("mouseover", function (event) {
-        this.classList.add("pulse2");
-        console.log(mainButton);
-    });
-
-    footerImg[3].addEventListener("mouseout", function (event) {
-        this.classList.remove("pulse2");
-        console.log(mainButton);
-    });
-
-    footerImg[3].addEventListener("touchstart", function (event) {
-        this.classList.add("pulse2");
-        console.log(mainButton);
-    });
-
-    footerImg[3].addEventListener("touchend", function (event) {
-        this.classList.remove("pulse2");
-        console.log(mainButton);
-    });
 
 });
