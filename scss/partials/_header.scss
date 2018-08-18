@@ -114,13 +114,12 @@
 .sidenav {
   height: 100%;
   width: 40vw;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 0;
   right: 0;
   background: linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(71,71,71,1) 41%, rgba(71,71,71,1) 100%);
   border-left: 2px solid black;
-  margin-top: 101px;
+  top: 101px;
   display: block;
 
   @media #{$medium-up} {
