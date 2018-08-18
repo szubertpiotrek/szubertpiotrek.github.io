@@ -36,8 +36,6 @@ $(function () {
 
     const footerImg = $(".footer__img--item");
 
-    const arrow = $('.header__link--arrow');
-
     const submenuList = $(".header__submenu--link");
 
     menuBtn.on("click", function (event) {
@@ -103,7 +101,6 @@ $(function () {
 
     menu.on("click", () => {
         event.preventDefault();
-        $(event.currentTarget).find(".header__submenu").toggleClass("show");
         $(event.currentTarget).find(".header__submenu").slideToggle();
         $(event.currentTarget).find('.header__link--arrow').toggleClass('rotation');
     });
