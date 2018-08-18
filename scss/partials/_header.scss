@@ -102,9 +102,13 @@
 }
 
 .header__submenu--link{
-  color: white;
   text-decoration: none;
   display: block;
+  color: #989898;
+
+  &-hover{
+    color: #fff;
+  }
 }
 
 .sidenav {
@@ -146,6 +150,11 @@
   transition: transform 0.6s ease-in-out;
 }
 
+.header__link--arrowChanged{
+  border-top: 12px solid rgb(38, 191, 163);
+  transition: 0.7s;
+}
+
 .rotation{
   transform: rotate(180deg);
 }
@@ -185,6 +194,7 @@
     }
   }
 }
+
 
 .pageScroll{
  overflow: hidden
