@@ -13,6 +13,7 @@
 
 .header__headline{
   padding-top: 10px;
+  overflow: hidden;
 
   @media #{$large-up} {
     padding-top: 0;
@@ -111,7 +112,7 @@
   top: 0;
   right: 0;
   background-color: black;
-  padding-top: 60px;
+  margin-top: 101px;
   display: block;
 }
 
@@ -161,17 +162,13 @@
   justify-content: flex-end;
 }
 
-.newMargin{
-  margin-right: 33vw;
-}
-
 .shadow{
   &::after{
     content: "";
     position: absolute;
     top: 101px;
     height: 100%;
-    width: 68vw;
+    width: 67vw;
     left: 0;
     background: rgba(0,0,0,0.2);
 
