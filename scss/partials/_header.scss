@@ -65,9 +65,12 @@
 }
 
 .header__submenu{
-  padding: 15px;
   display: none;
   z-index: 100;
+
+  @media #{$medium-up} {
+    padding: 15px;
+  }
 
   @media #{$large-up}{
     background-color: black;
@@ -106,7 +109,7 @@
 
 .sidenav {
   height: 100%;
-  width: 33vw;
+  width: 40vw;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -115,6 +118,10 @@
   border-left: 2px solid black;
   margin-top: 101px;
   display: block;
+
+  @media #{$medium-up} {
+    width: 33vw;
+  }
 }
 
 .sidenavLi {
