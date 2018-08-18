@@ -259,6 +259,7 @@ $(function () {
             $(".header").removeClass("newMargin");
             $("footer").removeClass("shadow");
             menu.removeClass("sidenavLi");
+            $("body").removeClass("pageScroll");
 
             turnOff();
         }
@@ -282,6 +283,7 @@ $(function () {
 
             headerMenu.addClass("header__nav");
             headerList.addClass("header__list");
+            $("body").removeClass("pageScroll");
 
             menu.removeClass("sidenavLi");
 
@@ -302,6 +304,7 @@ $(function () {
             $(".header").removeClass("newMargin");
             $("footer").removeClass("shadow");
             menu.removeClass("sidenavLi");
+            $("body").removeClass("pageScroll");
 
             turnOff();
         }
