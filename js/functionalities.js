@@ -26,7 +26,7 @@ $(function () {
 
     //gallery section events
     galleryHover();
-    
+
     //costs section events
     costsBoxStyling();
     costsButtons();
