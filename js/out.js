@@ -634,7 +634,7 @@ $(function () {
                 $("body").removeClass("pageScroll");
 
                 if (param === true) {
-                    headerMenu.removeClass("invisible");
+                    headerMenu.addClass("invisible");
                 }
             }
         });
