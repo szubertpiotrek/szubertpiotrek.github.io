@@ -86,6 +86,199 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/contactButton.js":
+/*!*****************************!*\
+  !*** ./js/contactButton.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function contactButton() {
+
+    var submitButton = document.querySelector(".contact__submited");
+
+    submitButton.addEventListener("mouseover", function (event) {
+        this.classList.add("button__effect");
+        console.log(mainButton);
+    });
+
+    submitButton.addEventListener("mouseout", function (event) {
+        this.classList.remove("button__effect");
+        console.log(mainButton);
+    });
+
+    submitButton.addEventListener("touchstart", function (event) {
+        this.classList.add("button__effect");
+        console.log(mainButton);
+    });
+
+    submitButton.addEventListener("touchend", function (event) {
+        this.classList.remove("button__effect");
+        console.log(mainButton);
+    });
+}
+
+exports.contactButton = contactButton;
+
+/***/ }),
+
+/***/ "./js/costsBoxStyling.js":
+/*!*******************************!*\
+  !*** ./js/costsBoxStyling.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function costsBoxStyling() {
+
+    var costsBoxes = $(".costs__box");
+
+    var mainColor = "#27C7AB";
+
+    costsBoxes.hover(function (event) {
+        $(event.currentTarget).css('backgroundColor', mainColor);
+        $(event.currentTarget).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(1).css('backgroundColor', mainColor);
+        $(event.currentTarget).children().eq(2).css('color', "white");
+        $(event.currentTarget).children().eq(3).css("color", mainColor);
+        $(event.currentTarget).children().last().css("backgroundColor", "white");
+        $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
+    }, function (event) {
+        $(event.currentTarget).css("backgroundColor", "#F9F9F9");
+        $(event.currentTarget).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
+        $(event.currentTarget).children().eq(2).css("color", mainColor);
+        $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
+        $(event.currentTarget).children().last().css("backgroundColor", mainColor);
+        $(event.currentTarget).children().last().children().eq(0).css("color", "white");
+    });
+
+    costsBoxes.on("touchstart", function (event) {
+        $(event.currentTarget).css('backgroundColor', mainColor);
+        $(event.currentTarget).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
+        $(event.currentTarget).children().eq(1).css('backgroundColor', mainColor);
+        $(event.currentTarget).children().eq(2).css('color', "white");
+        $(event.currentTarget).children().eq(3).css("color", mainColor);
+        $(event.currentTarget).children().last().css("backgroundColor", "white");
+        $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
+    });
+
+    costsBoxes.on("touchend", function (event) {
+        $(event.currentTarget).css("backgroundColor", "#F9F9F9");
+        $(event.currentTarget).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
+        $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
+        $(event.currentTarget).children().eq(2).css("color", mainColor);
+        $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
+        $(event.currentTarget).children().last().css("backgroundColor", mainColor);
+        $(event.currentTarget).children().last().children().eq(0).css("color", "white");
+    });
+}
+
+exports.costsBoxStyling = costsBoxStyling;
+
+/***/ }),
+
+/***/ "./js/costsButtons.js":
+/*!****************************!*\
+  !*** ./js/costsButtons.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function costsButtons() {
+
+    var costsButton = document.querySelectorAll(".costs__button");
+
+    for (var i = 0; i < costsButton.length; i++) {
+        costsButton[i].addEventListener("mouseover", function (event) {
+            this.classList.add("button__effect");
+        });
+
+        costsButton[i].addEventListener("mouseout", function (event) {
+            this.classList.remove("button__effect");
+        });
+    }
+
+    for (var i = 0; i < costsButton.length; i++) {
+        costsButton[i].addEventListener("touchstart", function (event) {
+            this.classList.add("button__effect");
+        });
+
+        costsButton[i].addEventListener("touchend", function (event) {
+            this.classList.remove("button__effect");
+        });
+    }
+}
+
+exports.costsButtons = costsButtons;
+
+/***/ }),
+
+/***/ "./js/footerMediaEffects.js":
+/*!**********************************!*\
+  !*** ./js/footerMediaEffects.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function footerMediaEffects() {
+
+    var footerImg = $(".footer__img--item");
+
+    var _loop = function _loop(i) {
+
+        footerImg.eq(i).hover(function (event) {
+            $(event.currentTarget).addClass("pulse" + (i + 1));
+        }, function (event) {
+            $(event.currentTarget).removeClass("pulse" + (i + 1));
+        });
+
+        footerImg.eq(i).on("touchstart", function (event) {
+            $(event.currentTarget).addClass("pulse" + (i + 1));
+        });
+
+        footerImg.eq(i).on("touchend", function (event) {
+            $(event.currentTarget).removeClass("pulse" + (i + 1));
+        });
+    };
+
+    for (var i = 0; i < footerImg.length; i++) {
+        _loop(i);
+    }
+}
+
+exports.footerMediaEffects = footerMediaEffects;
+
+/***/ }),
+
 /***/ "./js/functionalities.js":
 /*!*******************************!*\
   !*** ./js/functionalities.js ***!
@@ -96,8 +289,152 @@
 "use strict";
 
 
+var _slider = __webpack_require__(/*! ./slider */ "./js/slider.js");
+
+var _menuRWD = __webpack_require__(/*! ./menuRWD */ "./js/menuRWD.js");
+
+var _galleryHover = __webpack_require__(/*! ./galleryHover */ "./js/galleryHover.js");
+
+var _onloadMatch = __webpack_require__(/*! ./onloadMatch */ "./js/onloadMatch.js");
+
+var _resizing = __webpack_require__(/*! ./resizing */ "./js/resizing.js");
+
+var _costsBoxStyling = __webpack_require__(/*! ./costsBoxStyling */ "./js/costsBoxStyling.js");
+
+var _footerMediaEffects = __webpack_require__(/*! ./footerMediaEffects */ "./js/footerMediaEffects.js");
+
+var _mainButton = __webpack_require__(/*! ./mainButton */ "./js/mainButton.js");
+
+var _costsButtons = __webpack_require__(/*! ./costsButtons */ "./js/costsButtons.js");
+
+var _contactButton = __webpack_require__(/*! ./contactButton */ "./js/contactButton.js");
+
 $(function () {
 
+    //onload events
+    (0, _onloadMatch.onloadMatch)();
+
+    //resizing events
+    (0, _resizing.resizing)();
+
+    //header events
+    (0, _menuRWD.menuRWD)();
+
+    //main section events
+    (0, _slider.slider)();
+    (0, _mainButton.mainButton)();
+
+    //gallery section events
+    (0, _galleryHover.galleryHover)();
+
+    //costs section events
+    (0, _costsBoxStyling.costsBoxStyling)();
+    (0, _costsButtons.costsButtons)();
+
+    //contact sections events
+    (0, _contactButton.contactButton)();
+
+    //footer events
+    (0, _footerMediaEffects.footerMediaEffects)();
+});
+
+/***/ }),
+
+/***/ "./js/galleryHover.js":
+/*!****************************!*\
+  !*** ./js/galleryHover.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function galleryHover() {
+
+    var img = $(".gallery__img");
+
+    img.hover(function (event) {
+        var underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("appearing");
+        underline.addClass("disappearing");
+    }, function (event) {
+        var underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("disappearing");
+        underline.addClass("appearing");
+    });
+
+    img.on("touchstart", function (event) {
+        var underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("appearing");
+        underline.addClass("disappearing");
+    });
+    img.on("touchend", function (event) {
+        var underline = $(event.currentTarget).find('.gallery__underline');
+        underline.removeClass("disappearing");
+        underline.addClass("appearing");
+    });
+}
+
+exports.galleryHover = galleryHover;
+
+/***/ }),
+
+/***/ "./js/mainButton.js":
+/*!**************************!*\
+  !*** ./js/mainButton.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function mainButton() {
+
+    var mainButton = document.querySelector(".main__button");
+
+    mainButton.addEventListener("mouseover", function (event) {
+        this.classList.add("button__effect");
+    });
+
+    mainButton.addEventListener("mouseout", function (event) {
+        this.classList.remove("button__effect");
+    });
+
+    mainButton.addEventListener("touchstart", function (event) {
+        this.classList.add("button__effect");
+    });
+
+    mainButton.addEventListener("touchend", function (event) {
+        this.classList.remove("button__effect");
+    });
+}
+
+exports.mainButton = mainButton;
+
+/***/ }),
+
+/***/ "./js/menuRWD.js":
+/*!***********************!*\
+  !*** ./js/menuRWD.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function menuRWD() {
     var menu = $(".header__li");
 
     var headerMenu = $(".header__nav");
@@ -107,32 +444,6 @@ $(function () {
     var menuLink = $('.header__link');
 
     var menuBtn = $(".menu__btn--effect");
-
-    var img = $(".gallery__img");
-
-    var header = $("header");
-
-    var mobileMedium = window.matchMedia("screen and (max-width: 1023px) and (min-width: 641px)");
-
-    var mobileLarge = window.matchMedia("screen and (min-width: 1024px)");
-
-    var mobileSmall = window.matchMedia("screen and (max-width: 640px)");
-
-    var changeBtn = $(".section__post .container .row>div");
-
-    var row = $(".section__post .container .row");
-
-    var costsBoxes = $(".costs__box");
-
-    var mainColor = "#27C7AB";
-
-    var mainButton = document.querySelector(".main__button");
-
-    var costsButton = document.querySelectorAll(".costs__button");
-
-    var submitButton = document.querySelector(".contact__submited");
-
-    var footerImg = $(".footer__img--item");
 
     var submenuList = $(".header__submenu--link");
 
@@ -198,27 +509,256 @@ $(function () {
     }, function () {
         $(event.currentTarget).removeClass('header__submenu--link-hover');
     });
+}
 
-    img.hover(function (event) {
-        var underline = $(event.currentTarget).find('.gallery__underline');
-        underline.removeClass("appearing");
-        underline.addClass("disappearing");
-    }, function (event) {
-        var underline = $(event.currentTarget).find('.gallery__underline');
-        underline.removeClass("disappearing");
-        underline.addClass("appearing");
+exports.menuRWD = menuRWD;
+
+/***/ }),
+
+/***/ "./js/onloadMatch.js":
+/*!***************************!*\
+  !*** ./js/onloadMatch.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function onloadMatch() {
+
+    var headerMenu = $(".header__nav");
+
+    var changeBtn = $(".section__post .container .row>div");
+
+    var row = $(".section__post .container .row");
+
+    var menuBtn = $(".menu__btn--effect");
+
+    var menu = $(".header__li");
+
+    var header = $("header");
+
+    $(window).ready(function (event) {
+        console.log(window.innerWidth);
+        if (window.innerWidth <= 1024 && window.innerWidth > 640) {
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+            headerMenu.addClass("invisible");
+            turnOff();
+        } else if (window.innerWidth <= 640) {
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+            headerMenu.addClass("invisible");
+
+            turnOff();
+        } else {
+            changeBtn.eq(0).children().first().addClass("showButtons");
+            changeBtn.eq(3).children().first().addClass("showButtons");
+            row.find(".main__insidebutton").removeClass("show1");
+            headerMenu.removeClass("invisible");
+
+            turnOn();
+        }
     });
 
-    img.on("touchstart", function (event) {
-        var underline = $(event.currentTarget).find('.gallery__underline');
-        underline.removeClass("appearing");
-        underline.addClass("disappearing");
+    function turnOn() {
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 200) {
+                header.slideUp(700);
+            } else {
+                header.slideDown(700);
+            }
+        });
+
+        $(window).off('click');
+    }
+
+    function turnOff() {
+        $(window).off('scroll');
+
+        $(window).on("click", function (event) {
+            if (!menuBtn.is(event.target) && menuBtn.has(event.target).length === 0 && !headerMenu.is(event.target) && headerMenu.has(event.target).length === 0) {
+                event.preventDefault();
+                headerMenu.removeClass("sidenav");
+
+                headerMenu.addClass("invisible");
+
+                menu.removeClass("sidenavLi");
+                menu.addClass("header__li");
+
+                $(".header").removeClass("newMargin");
+                $("section").removeClass("shadow");
+                $("footer").removeClass("shadow");
+
+                $("body").removeClass("pageScroll");
+            }
+        });
+    }
+}
+
+exports.onloadMatch = onloadMatch;
+
+/***/ }),
+
+/***/ "./js/resizing.js":
+/*!************************!*\
+  !*** ./js/resizing.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function resizing() {
+
+    var menu = $(".header__li");
+
+    var headerMenu = $(".header__nav");
+
+    var headerList = $(".header__list");
+
+    var menuBtn = $(".menu__btn--effect");
+
+    var header = $("header");
+
+    var mobileMedium = window.matchMedia("screen and (max-width: 1023px) and (min-width: 641px)");
+
+    var mobileLarge = window.matchMedia("screen and (min-width: 1024px)");
+
+    var mobileSmall = window.matchMedia("screen and (max-width: 640px)");
+
+    var changeBtn = $(".section__post .container .row>div");
+
+    var row = $(".section__post .container .row");
+
+    mobileMedium.addListener(function (mobile) {
+        if (mobile.matches) {
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+
+            console.log(row.find(".main__sidebutton--a"));
+
+            headerMenu.addClass("invisible");
+            headerMenu.removeClass("sidenav");
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+            menu.removeClass("sidenavLi");
+            $("body").removeClass("pageScroll");
+
+            turnOff();
+        }
     });
-    img.on("touchend", function (event) {
-        var underline = $(event.currentTarget).find('.gallery__underline');
-        underline.removeClass("disappearing");
-        underline.addClass("appearing");
+
+    mobileLarge.addListener(function (mobile) {
+        if (mobile.matches) {
+            changeBtn.eq(0).children().first().addClass("showButtons");
+            changeBtn.eq(3).children().first().addClass("showButtons");
+            row.find(".main__insidebutton").removeClass("show1");
+
+            headerMenu.removeClass("invisible");
+            headerMenu.removeClass("sidenav");
+
+            menu.removeClass("sidenavLi");
+            menu.addClass("header__li");
+
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+
+            headerMenu.addClass("header__nav");
+            headerList.addClass("header__list");
+            $("body").removeClass("pageScroll");
+
+            menu.removeClass("sidenavLi");
+
+            turnOn();
+        }
     });
+
+    mobileSmall.addListener(function (mobile) {
+        if (mobile.matches) {
+            changeBtn.eq(0).children().first().removeClass("showButtons");
+            changeBtn.eq(3).children().first().removeClass("showButtons");
+            row.find(".main__insidebutton").addClass("show1");
+
+            headerMenu.addClass("invisible");
+            headerMenu.removeClass("sidenav");
+
+            $("section").removeClass("shadow");
+            $(".header").removeClass("newMargin");
+            $("footer").removeClass("shadow");
+            menu.removeClass("sidenavLi");
+            $("body").removeClass("pageScroll");
+
+            turnOff();
+        }
+    });
+
+    function turnOn() {
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 200) {
+                header.slideUp(700);
+            } else {
+                header.slideDown(700);
+            }
+        });
+
+        $(window).off('click');
+    }
+
+    function turnOff() {
+        $(window).off('scroll');
+
+        $(window).on("click", function (event) {
+            if (!menuBtn.is(event.target) && menuBtn.has(event.target).length === 0 && !headerMenu.is(event.target) && headerMenu.has(event.target).length === 0) {
+                event.preventDefault();
+                headerMenu.removeClass("sidenav");
+
+                headerMenu.addClass("invisible");
+
+                menu.removeClass("sidenavLi");
+                menu.addClass("header__li");
+
+                $(".header").removeClass("newMargin");
+                $("section").removeClass("shadow");
+                $("footer").removeClass("shadow");
+
+                $("body").removeClass("pageScroll");
+            }
+        });
+    }
+}
+
+exports.resizing = resizing;
+
+/***/ }),
+
+/***/ "./js/slider.js":
+/*!**********************!*\
+  !*** ./js/slider.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function slider() {
 
     var buttons = $(".main__sidebutton");
 
@@ -380,258 +920,9 @@ $(function () {
         $(event.currentTarget).children().first().removeClass("main__sidebutton--effectIn");
         $(event.currentTarget).children().first().addClass("main__sidebutton--effectOut");
     });
+}
 
-    mobileMedium.addListener(function (mobile) {
-        if (mobile.matches) {
-            changeBtn.eq(0).children().first().removeClass("showButtons");
-            changeBtn.eq(3).children().first().removeClass("showButtons");
-            row.find(".main__insidebutton").addClass("show1");
-
-            console.log(row.find(".main__sidebutton--a"));
-
-            headerMenu.addClass("invisible");
-            headerMenu.removeClass("sidenav");
-            $("section").removeClass("shadow");
-            $(".header").removeClass("newMargin");
-            $("footer").removeClass("shadow");
-            menu.removeClass("sidenavLi");
-            $("body").removeClass("pageScroll");
-
-            turnOff();
-        }
-    });
-
-    mobileLarge.addListener(function (mobile) {
-        if (mobile.matches) {
-            changeBtn.eq(0).children().first().addClass("showButtons");
-            changeBtn.eq(3).children().first().addClass("showButtons");
-            row.find(".main__insidebutton").removeClass("show1");
-
-            headerMenu.removeClass("invisible");
-            headerMenu.removeClass("sidenav");
-
-            menu.removeClass("sidenavLi");
-            menu.addClass("header__li");
-
-            $("section").removeClass("shadow");
-            $(".header").removeClass("newMargin");
-            $("footer").removeClass("shadow");
-
-            headerMenu.addClass("header__nav");
-            headerList.addClass("header__list");
-            $("body").removeClass("pageScroll");
-
-            menu.removeClass("sidenavLi");
-
-            turnOn();
-        }
-    });
-
-    mobileSmall.addListener(function (mobile) {
-        if (mobile.matches) {
-            changeBtn.eq(0).children().first().removeClass("showButtons");
-            changeBtn.eq(3).children().first().removeClass("showButtons");
-            row.find(".main__insidebutton").addClass("show1");
-
-            headerMenu.addClass("invisible");
-            headerMenu.removeClass("sidenav");
-
-            $("section").removeClass("shadow");
-            $(".header").removeClass("newMargin");
-            $("footer").removeClass("shadow");
-            menu.removeClass("sidenavLi");
-            $("body").removeClass("pageScroll");
-
-            turnOff();
-        }
-    });
-
-    $(window).ready(function (event) {
-        console.log(window.innerWidth);
-        if (window.innerWidth <= 1024 && window.innerWidth > 640) {
-            changeBtn.eq(0).children().first().removeClass("showButtons");
-            changeBtn.eq(3).children().first().removeClass("showButtons");
-            row.find(".main__insidebutton").addClass("show1");
-            headerMenu.addClass("invisible");
-            turnOff();
-        } else if (window.innerWidth <= 640) {
-            changeBtn.eq(0).children().first().removeClass("showButtons");
-            changeBtn.eq(3).children().first().removeClass("showButtons");
-            row.find(".main__insidebutton").addClass("show1");
-            headerMenu.addClass("invisible");
-
-            turnOff();
-        } else {
-            changeBtn.eq(0).children().first().addClass("showButtons");
-            changeBtn.eq(3).children().first().addClass("showButtons");
-            row.find(".main__insidebutton").removeClass("show1");
-            headerMenu.removeClass("invisible");
-
-            turnOn();
-        }
-    });
-
-    costsBoxes.hover(function (event) {
-        $(event.currentTarget).css('backgroundColor', mainColor);
-        $(event.currentTarget).css('border', "1px solid" + mainColor);
-        $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
-        $(event.currentTarget).children().eq(1).css('backgroundColor', mainColor);
-        $(event.currentTarget).children().eq(2).css('color', "white");
-        $(event.currentTarget).children().eq(3).css("color", mainColor);
-        $(event.currentTarget).children().last().css("backgroundColor", "white");
-        $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
-    }, function (event) {
-        $(event.currentTarget).css("backgroundColor", "#F9F9F9");
-        $(event.currentTarget).css("border", "1px solid #C2C2C2");
-        $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
-        $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
-        $(event.currentTarget).children().eq(2).css("color", mainColor);
-        $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
-        $(event.currentTarget).children().last().css("backgroundColor", mainColor);
-        $(event.currentTarget).children().last().children().eq(0).css("color", "white");
-    });
-
-    costsBoxes.on("touchstart", function (event) {
-        $(event.currentTarget).css('backgroundColor', mainColor);
-        $(event.currentTarget).css('border', "1px solid" + mainColor);
-        $(event.currentTarget).children().eq(0).css('border', "1px solid" + mainColor);
-        $(event.currentTarget).children().eq(1).css('backgroundColor', mainColor);
-        $(event.currentTarget).children().eq(2).css('color', "white");
-        $(event.currentTarget).children().eq(3).css("color", mainColor);
-        $(event.currentTarget).children().last().css("backgroundColor", "white");
-        $(event.currentTarget).children().last().children().eq(0).css("color", mainColor);
-    });
-
-    costsBoxes.on("touchend", function (event) {
-        $(event.currentTarget).css("backgroundColor", "#F9F9F9");
-        $(event.currentTarget).css("border", "1px solid #C2C2C2");
-        $(event.currentTarget).children().eq(0).css("border", "1px solid #C2C2C2");
-        $(event.currentTarget).children().eq(1).css("backgroundColor", "#C2C2C2");
-        $(event.currentTarget).children().eq(2).css("color", mainColor);
-        $(event.currentTarget).children().eq(3).css("color", "#C2C2C2");
-        $(event.currentTarget).children().last().css("backgroundColor", mainColor);
-        $(event.currentTarget).children().last().children().eq(0).css("color", "white");
-    });
-
-    mainButton.addEventListener("mouseover", function (event) {
-        this.classList.add("button__effect");
-        console.log(mainButton);
-    });
-
-    mainButton.addEventListener("mouseout", function (event) {
-        this.classList.remove("button__effect");
-        console.log(mainButton);
-    });
-
-    mainButton.addEventListener("touchstart", function (event) {
-        this.classList.add("button__effect");
-        console.log(mainButton);
-    });
-
-    mainButton.addEventListener("touchend", function (event) {
-        this.classList.remove("button__effect");
-        console.log(mainButton);
-    });
-
-    for (var i = 0; i < costsButton.length; i++) {
-        costsButton[i].addEventListener("mouseover", function (event) {
-            this.classList.add("button__effect");
-            console.log(mainButton);
-        });
-
-        costsButton[i].addEventListener("mouseout", function (event) {
-            this.classList.remove("button__effect");
-            console.log(mainButton);
-        });
-    }
-
-    for (var i = 0; i < costsButton.length; i++) {
-        costsButton[i].addEventListener("touchstart", function (event) {
-            this.classList.add("button__effect");
-            console.log(mainButton);
-        });
-
-        costsButton[i].addEventListener("touchend", function (event) {
-            this.classList.remove("button__effect");
-            console.log(mainButton);
-        });
-    }
-
-    submitButton.addEventListener("mouseover", function (event) {
-        this.classList.add("button__effect");
-        console.log(mainButton);
-    });
-
-    submitButton.addEventListener("mouseout", function (event) {
-        this.classList.remove("button__effect");
-        console.log(mainButton);
-    });
-
-    submitButton.addEventListener("touchstart", function (event) {
-        this.classList.add("button__effect");
-        console.log(mainButton);
-    });
-
-    submitButton.addEventListener("touchend", function (event) {
-        this.classList.remove("button__effect");
-        console.log(mainButton);
-    });
-
-    var _loop = function _loop(_i) {
-
-        footerImg.eq(_i).hover(function (event) {
-            $(event.currentTarget).addClass("pulse" + (_i + 1));
-        }, function (event) {
-            $(event.currentTarget).removeClass("pulse" + (_i + 1));
-        });
-
-        footerImg.eq(_i).on("touchstart", function (event) {
-            $(event.currentTarget).addClass("pulse" + (_i + 1));
-        });
-
-        footerImg.eq(_i).on("touchend", function (event) {
-            $(event.currentTarget).removeClass("pulse" + (_i + 1));
-        });
-    };
-
-    for (var _i = 0; _i < footerImg.length; _i++) {
-        _loop(_i);
-    }
-
-    function turnOn() {
-        $(window).on('scroll', function () {
-            if ($(this).scrollTop() > 200) {
-                header.slideUp(700);
-            } else {
-                header.slideDown(700);
-            }
-        });
-
-        $(window).off('click');
-    }
-
-    function turnOff() {
-        $(window).off('scroll');
-
-        $(window).on("click", function (event) {
-            if (!menuBtn.is(event.target) && menuBtn.has(event.target).length === 0 && !headerMenu.is(event.target) && headerMenu.has(event.target).length === 0) {
-                event.preventDefault();
-                headerMenu.removeClass("sidenav");
-
-                headerMenu.addClass("invisible");
-
-                menu.removeClass("sidenavLi");
-                menu.addClass("header__li");
-
-                $(".header").removeClass("newMargin");
-                $("section").removeClass("shadow");
-                $("footer").removeClass("shadow");
-
-                $("body").removeClass("pageScroll");
-            }
-        });
-    }
-});
+exports.slider = slider;
 
 /***/ })
 
