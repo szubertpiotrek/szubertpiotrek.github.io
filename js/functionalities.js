@@ -328,7 +328,7 @@ $(function () {
             $("body").removeClass("pageScroll");
 
             turnOff();
-            menuOutsideTouch(true);
+            
         }
     });
 
@@ -355,7 +355,7 @@ $(function () {
             menu.removeClass("sidenavLi");
 
             turnOn();
-            menuOutsideTouch(false);
+
         }
     });
 
@@ -375,7 +375,7 @@ $(function () {
             $("body").removeClass("pageScroll");
 
             turnOff();
-            menuOutsideTouch(true);
+
         }
     });
 
@@ -388,7 +388,7 @@ $(function () {
             row.find(".main__insidebutton").addClass("show1");
             headerMenu.addClass("invisible");
             turnOff();
-            menuOutsideTouch(true);
+
         }
         else if (window.innerWidth <= 640) {
             changeBtn.eq(0).children().first().removeClass("showButtons");
@@ -397,7 +397,7 @@ $(function () {
             headerMenu.addClass("invisible");
 
             turnOff();
-            menuOutsideTouch(true);
+
         } else {
             changeBtn.eq(0).children().first().addClass("showButtons");
             changeBtn.eq(3).children().first().addClass("showButtons");
@@ -405,7 +405,6 @@ $(function () {
             headerMenu.removeClass("invisible");
 
             turnOn();
-            menuOutsideTouch(false);
         }
     });
 
@@ -545,19 +544,21 @@ $(function () {
             }else{
                 header.slideDown(700);
             }
-        })
+        });
+
+        $(window).off('click');
     }
 
 
     function turnOff(){
         $(window).off('scroll');
-    }
 
-    function menuOutsideTouch(param) {
         $(window).on("click", function (event) {
             if (!menuBtn.is(event.target)&& menuBtn.has(event.target).length === 0 && !headerMenu.is(event.target)&& headerMenu.has(event.target).length === 0){
                 event.preventDefault();
                 headerMenu.removeClass("sidenav");
+
+                headerMenu.addClass("invisible");
 
                 menu.removeClass("sidenavLi");
                 menu.addClass("header__li");
@@ -567,14 +568,9 @@ $(function () {
                 $("footer").removeClass("shadow");
 
                 $("body").removeClass("pageScroll");
-
-                if(param===true){
-                    headerMenu.addClass("invisible");
-                }
             }
         });
+
     }
-
-
 
 });
