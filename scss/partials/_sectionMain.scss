@@ -3,20 +3,22 @@
 }
 
 .section__main--img{
-  display: none;
   width: 100%;
+  display: none;
+
+  &-visible {
+   display: block;
+  }
 
   @media #{$medium-up} {
     justify-content: center;
   }
   @media #{$large-up}{
     padding-top: 100px;
-    display: none;
   }
 
-  img{
+  &-item{
     width: 100%;
-
   }
 }
 

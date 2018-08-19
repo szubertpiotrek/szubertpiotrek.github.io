@@ -27,7 +27,7 @@ $(function () {
     const costsBoxes = $(".costs__box");
 
     const mainColor = "#27C7AB";
-    
+
     var mainButton = document.querySelector(".main__button");
 
     var costsButton = document.querySelectorAll(".costs__button");
@@ -120,8 +120,6 @@ $(function () {
             event.preventDefault();
             headerMenu.removeClass("sidenav");
 
-
-            headerMenu.addClass("invisible");
             menu.removeClass("sidenavLi");
             menu.addClass("header__li");
 
@@ -169,58 +167,117 @@ $(function () {
     let elementNumber = 0;
 
 
-    images.eq(elementNumber).addClass("visible");
-
-
-    buttons.on("click", function (event) {
-        event.preventDefault();
-        images.eq(elementNumber).removeClass("visible");
+    let time = setInterval(() => {
+        images.eq(elementNumber).removeClass("section__main--img-visible");
         elementNumber--;
 
         if (elementNumber === -1) {
             elementNumber = images.length - 1;
         }
 
-        images.eq(elementNumber).addClass("visible");
+        images.eq(elementNumber).addClass("section__main--img-visible");
+    }, 4000);
+
+    images.eq(elementNumber).addClass("section__main--img-visible");
+
+
+    buttons.on("click", function (event) {
+        event.preventDefault();
+        images.eq(elementNumber).removeClass("section__main--img-visible");
+        elementNumber--;
+
+        if (elementNumber === -1) {
+            elementNumber = images.length - 1;
+        }
+
+        images.eq(elementNumber).addClass("section__main--img-visible");
+
+        clearInterval(time);
+        time = setInterval(() => {
+            images.eq(elementNumber).removeClass("section__main--img-visible");
+            elementNumber--;
+
+            if (elementNumber === -1) {
+                elementNumber = images.length - 1;
+            }
+
+            images.eq(elementNumber).addClass("section__main--img-visible");
+        }, 4000)
     });
 
 
     buttons.on("touchstart", function (event) {
         event.preventDefault();
-        images.eq(elementNumber).removeClass("visible");
+        images.eq(elementNumber).removeClass("section__main--img-visible");
         elementNumber--;
 
         if (elementNumber === -1) {
             elementNumber = images.length - 1;
         }
 
-        images.eq(elementNumber).addClass("visible");
+        images.eq(elementNumber).addClass("section__main--img-visible");
+
+        clearInterval(time);
+        time = setInterval(() => {
+            images.eq(elementNumber).removeClass("section__main--img-visible");
+            elementNumber--;
+
+            if (elementNumber === -1) {
+                elementNumber = images.length - 1;
+            }
+
+            images.eq(elementNumber).addClass("section__main--img-visible");
+        }, 4000)
     });
 
 
 
     insideButtons.on("click", function (event) {
         event.preventDefault();
-        images.eq(elementNumber).removeClass("visible");
+        images.eq(elementNumber).removeClass("section__main--img-visible");
         elementNumber--;
 
         if (elementNumber === -1) {
             elementNumber = images.length - 1;
         }
 
-        images.eq(elementNumber).addClass("visible");
+        images.eq(elementNumber).addClass("section__main--img-visible");
+
+        clearInterval(time);
+        time = setInterval(() => {
+            images.eq(elementNumber).removeClass("section__main--img-visible");
+            elementNumber--;
+
+            if (elementNumber === -1) {
+                elementNumber = images.length - 1;
+            }
+
+            images.eq(elementNumber).addClass("section__main--img-visible");
+        }, 4000)
     });
 
     insideButtons.on("touchstart", function (event) {
         event.preventDefault();
-        images.eq(elementNumber).removeClass("visible");
+        images.eq(elementNumber).removeClass("section__main--img-visible");
         elementNumber--;
 
         if (elementNumber === -1) {
             elementNumber = images.length - 1;
         }
 
-        images.eq(elementNumber).addClass("visible");
+        images.eq(elementNumber).addClass("section__main--img-visible");
+
+        clearInterval(time);
+        time = setInterval(() => {
+            images.eq(elementNumber).removeClass("section__main--img-visible");
+            elementNumber--;
+
+            if (elementNumber === -1) {
+                elementNumber = images.length - 1;
+            }
+
+            images.eq(elementNumber).addClass("section__main--img-visible");
+        }, 4000)
     });
 
     buttons.hover(
@@ -410,7 +467,7 @@ $(function () {
         $(event.currentTarget).children().last().children().eq(0).css("color", "white");
     });
 
-    
+
     mainButton.addEventListener("mouseover", function (event) {
         this.classList.add("button__effect");
         console.log(mainButton);
